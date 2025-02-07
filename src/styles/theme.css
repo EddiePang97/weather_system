@@ -1,0 +1,45 @@
+/* 背景层通用样式 */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 当前背景层，始终显示在最下层 */
+.bg.current {
+  z-index: 0;
+}
+
+/* 上一个背景层，放置在当前背景层之上用于交叉渐变 */
+.bg.prev {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 当添加 .fade 类时，旧背景透明度由 1 渐变为 0 */
+.bg.prev.fade {
+  opacity: 0;
+}
+
+/* 右上角固定的主题切换按钮 */
+.theme-switcher-button {
+  position: fixed;
+  top: 20px;
+  z-index: 2;
+  
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-switcher-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,48 @@
+/* Shared width container for both search bar and weather card */
+.shared-width-container {
+    width: 60vw;
+   padding-top: 20px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+
+/* Adjusting responsive behavior */
+
+
+.search-bar-row {
+    display: flex;
+    gap: 10px;
+    width: 100%; /* Inherit full width from parent container */
+}
+
+.floating-label-input {
+    flex: 1; /* Allow input to grow and take remaining space */
+}
+
+
+
+@media (max-width: 1200px) {
+    .shared-width-container {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .shared-width-container {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 690) {
+    .shared-width-container {
+        width: 70vw;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .shared-width-container {
+        width: 80vw;
+    }
+}

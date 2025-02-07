@@ -1,0 +1,91 @@
+
+.weather-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 150px;
+
+
+}
+
+
+.card-box {
+    width: 60vw;
+}
+
+.temperature-display {
+    color: #6c63ff;
+    font-size: clamp(100px, 5vw, 126px);
+}
+
+.weather-meta {
+    font-size: 14px;
+}
+
+.search-history{
+    max-width: 620px;
+    justify-content: center;
+    align-items: center;
+ border: 1px solid #FFFFFF33;
+}
+
+.search-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-history li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.weather-icon {
+    position: absolute;
+    top: -135px;
+    /* Adjusted to make it pop slightly */
+    right: 15px;
+    width: 60%;
+    /* Base width that scales responsively */
+    min-width: 150px;
+    /* Ensures it doesn’t get too small on small screens */
+    max-width: 420px;
+    /* Prevents it from becoming too large on large screens */
+    object-fit: contain;
+    z-index: 1;
+}
+
+
+
+/* Media query to handle smaller screens */
+@media (max-width: 768px) {
+    .weather-icon {
+        top: -80px;
+        /* Slightly reduce pop-out on smaller screens */
+        width: 50%;
+        /* Reduce size for better responsiveness */
+        min-width: 120px;
+        max-width: 300px;
+    }
+
+    .card-box {
+        width: 70vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .weather-icon {
+        top: -60px;
+        width: 55%;
+        min-width: 100px;
+    }
+
+    .card-box {
+        width: 80vw;
+    }
+
+}

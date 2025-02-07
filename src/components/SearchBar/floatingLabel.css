@@ -1,0 +1,28 @@
+.floating-label-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .floating-label {
+    position: absolute;
+    font-family: 'Noto Sans', sans-serif;
+    top: 40%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #00000066;
+    transition: all 0.3s ease;
+    pointer-events: none; /* 确保用户无法点击 label */
+    padding-top: 10px;
+  }
+  
+  .floating-label.active {
+    top: 5px;
+    font-size: 12px;
+    color: #333;
+  }
+  
+  input {
+    padding-top: 20px; /* 确保文本不会覆盖 label */
+  }
+  
