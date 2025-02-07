@@ -39,12 +39,10 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData, searchHistory,cb
                             border: "1px solid #FFFFFF33",
                             borderRadius: '20px',
                             padding: '88px 20px',
-                            // height: '90vh',
                             boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                         }}
                     >
                         <Flex style={{ width: "100%", paddingBottom: "50px" }}>
-                            {/* Responsive vertical flex */}
                             <Flex className="responsive-flex" vertical style={{ width: phoneSize ? "100%" : "50%" }}>
                                 <Text style={{ fontSize }}>Today's Weather</Text>
                                 <Title
@@ -65,9 +63,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData, searchHistory,cb
                                 </div>
                             </Flex>
 
-                            {/* Responsive row-to-column layout */}
                             <Flex
-                                vertical={phoneSize} // Set vertical only on small screens
+                                vertical={phoneSize} 
                                 className="responsive-row-to-column"
                                 align="flex-end"
                                 justify={phoneSize ? "flex-end" : "space-between"}

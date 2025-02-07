@@ -9,12 +9,10 @@ function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>("light");
 
   useEffect(() => {
-    // Dynamically add/remove theme class to the root element
     document.body.classList.remove('light-theme', 'dark-theme');
     document.body.classList.add(theme === 'dark' ? 'dark-theme' : 'light-theme');
   }, [theme]);
 
-  // Ant Design theme configuration
   const antdThemeConfig = theme === 'dark' ? {
     algorithm: antdTheme.darkAlgorithm,
     token: {
@@ -34,7 +32,7 @@ function App() {
       <div>
         <ThemeSwitcher onThemeChange={setTheme} />
         <Routes>
-          <Route path="/" element={<WeatherPage  />} />
+          <Route path="/" element={<WeatherPage />} />
         </Routes>
       </div>
     </ConfigProvider>

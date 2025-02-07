@@ -1,22 +1,21 @@
-/* Shared width container for both search bar and weather card */
+
 .shared-width-container {
     width: 60vw;
    padding-top: 20px;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto; 
 }
 
 
-/* Adjusting responsive behavior */
 
 
 .search-bar-row {
     display: flex;
     gap: 10px;
-    width: 100%; /* Inherit full width from parent container */
+    width: 100%;
 }
 
 .floating-label-input {
-    flex: 1; /* Allow input to grow and take remaining space */
+    flex: 1;
 }
 
 

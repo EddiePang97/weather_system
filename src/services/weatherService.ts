@@ -1,6 +1,4 @@
-import { message } from "antd";
-
-const API_KEY = '7e7c4a33435c745234768d1c972f8c7b'; // Replace with your actual API key
+const API_KEY = '7e7c4a33435c745234768d1c972f8c7b'; 
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 export const fetchWeatherData = async (city: string) => {
@@ -13,7 +11,7 @@ export const fetchWeatherData = async (city: string) => {
     }
 
     const data = await response.json();
-    // Extract only the relevant fields
+   
     return {
       name: data.name,
       country: data.sys.country,
@@ -27,12 +25,6 @@ export const fetchWeatherData = async (city: string) => {
     };
   } catch (error) {
     console.error('Error fetching weather data:', error);
-
-    // Type guard to access error message safely
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-
-    // Display error message using message component
-    message.error(errorMessage, 3); // 3-second duration for the message
 
     return null;
   }

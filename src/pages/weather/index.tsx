@@ -24,14 +24,6 @@ const WeatherPage: React.FC = () => {
     const [searchHistory, setSearchHistory] = useState<WeatherData[]>([]);
     const [messageApi, contextHolder] = message.useMessage();
 
-
-    // const error = () => {
-    //     messageApi.open({
-    //       type: 'error',
-    //       content: 'This is an error message',
-    //     });
-    //   };
-
     const handleFetchWeather = async (e: string) => {
         const respone = await fetchWeatherData(e);
 
@@ -52,25 +44,23 @@ const WeatherPage: React.FC = () => {
                     return [...prevHistory, respone];
                 }
             });
-        }else{
+        } else {
             messageApi.open({
                 type: 'error',
                 content: 'Please Insert Correct Country',
-              });
-            
+            });
+
         }
     };
 
     const handeleCbDelete = (city: string) => {
         setSearchHistory((prevHistory) => {
-            // Filter out the city to be deleted
             return prevHistory.filter((item) => item.name !== city);
         });
         console.log(`${city} removed from search history.`);
     };
 
     const handleCbOnsearch = async (city: string) => {
-        // Find the city in the search history
         const existingEntry = searchHistory.find((item) => item.name === city);
 
         if (existingEntry) {
@@ -78,7 +68,6 @@ const WeatherPage: React.FC = () => {
             setCurrentWeather(existingEntry);
         } else {
             console.log(`Fetching weather data for ${city} from API.`);
-            // Optionally, fetch the weather again if not found in search history
             const response = await fetchWeatherData(city);
             if (response) {
                 setCurrentWeather(response);
@@ -90,13 +79,9 @@ const WeatherPage: React.FC = () => {
 
     return (
         <div className="weather-container">
- {contextHolder}
+            {contextHolder}
             <SearchBar onSearch={handleFetchWeather} />
-
             <WeatherCard weatherData={currentWeather} searchHistory={searchHistory} cbDelete={handeleCbDelete} cbOnSearch={handleCbOnsearch} />
-
-
-
         </div>
 
 

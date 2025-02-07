@@ -1,6 +1,6 @@
 .history-card {
-    margin: 20px auto; /* Center the card horizontally */ /* Adjust this based on the content above */
-    overflow: hidden; /* Prevent overflow beyond the viewport */
+    margin: 20px auto; 
+    overflow: hidden;
     width: 100%;
     height: 100%;
     
@@ -9,13 +9,12 @@
 
   
   .scrollable-container {
-    min-height: 200px; /* Adjust height as needed */
+    min-height: 200px;
     max-height: 253px;
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto; 
     padding-right: 4px;
   }
   
-  /* Customize the scrollbar (optional) */
   .scrollable-container::-webkit-scrollbar {
     width: 4px;
   }

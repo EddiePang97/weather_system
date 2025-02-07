@@ -4,7 +4,7 @@ import bgLight from '../assets/bg-light.png';
 import { SunFilled, SunOutlined } from '@ant-design/icons';
 import { FloatButton } from 'antd';
 
-// 定义主题类型
+
 type Theme = 'dark' | 'light';
 
 
@@ -12,12 +12,9 @@ interface ThemeSwitcherProps {
   onThemeChange: (newTheme: Theme) => void;
 }
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({onThemeChange}) => {
-  // 当前主题，初始为 'light'
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onThemeChange }) => {
   const [theme, setTheme] = useState<Theme>('light');
-  // 用于存放上一次的背景图片 URL，实现交叉渐变效果
   const [prevBg, setPrevBg] = useState<string | null>(null);
-  // 控制上一个背景层的淡出动画
   const [fade, setFade] = useState(false);
 
   // 当前主题对应的背景图片
@@ -28,8 +25,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({onThemeChange}) => {
     setPrevBg(currentBg);
     setFade(false);
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-    onThemeChange(theme=== 'light' ? 'dark' : 'light');
-    // 延时 50ms 触发淡出（确保组件已渲染新背景）
+    onThemeChange(theme === 'light' ? 'dark' : 'light');
     setTimeout(() => {
       setFade(true);
     }, 50);
@@ -37,29 +33,23 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({onThemeChange}) => {
 
   return (
     <>
-      {/* 当前背景层 */}
       <div
         className="bg current"
         style={{ backgroundImage: `url(${currentBg})` }}
-      ></div>
+      />
 
-      {/* 上一个背景层，在切换时用于实现交叉渐变 */}
       {prevBg && (
         <div
           className={`bg prev ${fade ? 'fade' : ''}`}
           style={{ backgroundImage: `url(${prevBg})` }}
           onTransitionEnd={() => {
-            // 动画结束后清除旧背景
             setPrevBg(null);
             setFade(false);
           }}
-        ></div>
+        />
       )}
 
-      {/* 右上角的主题切换按钮 */}
-      <FloatButton  icon={theme === 'light' ? <SunOutlined /> : <SunFilled />} onClick={toggleTheme}>
-    
-      </FloatButton>
+      <FloatButton icon={theme === 'light' ? <SunOutlined /> : <SunFilled />} onClick={toggleTheme} />
     </>
   );
 };
