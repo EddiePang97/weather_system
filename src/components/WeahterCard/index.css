@@ -44,7 +44,7 @@
 
 .weather-icon {
     position: absolute;
-    top: -135px;
+    top: -205px;
     right: 15px;
     width: 60%;
     min-width: 150px;
@@ -80,4 +80,7 @@
         width: 80vw;
     }
 
+    .weather-card-container {
+        padding-top: 80px;
+    }
 }

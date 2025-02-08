@@ -38,12 +38,12 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData, searchHistory,cb
                             backdropFilter: 'blur(10px)',
                             border: "1px solid #FFFFFF33",
                             borderRadius: '20px',
-                            padding: '88px 20px',
+                            padding: '18px 10x',
                             boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                         }}
                     >
                         <Flex style={{ width: "100%", paddingBottom: "50px" }}>
-                            <Flex className="responsive-flex" vertical style={{ width: phoneSize ? "100%" : "50%" }}>
+                            <Flex  vertical style={{ width: phoneSize ? "100%" : "50%" }}>
                                 <Text style={{ fontSize }}>Today's Weather</Text>
                                 <Title
                                     level={1}
