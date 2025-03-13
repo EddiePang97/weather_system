@@ -1,11 +1,11 @@
-const API_KEY = '7e7c4a33435c745234768d1c972f8c7b'; 
-const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+// const API_KEY = '7e7c4a33435c745234768d1c972f8c7b'; 
+// const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 export const fetchWeatherData = async (city: string) => {
     
-  const url = `${BASE_URL}?q=${city}&units=metric&appid=${API_KEY}`;
+  //const url = `${BASE_URL}?q=${city}&units=metric&appid=${API_KEY}`;
   try {
-    const response = await fetch(url);
+    const response = await fetch('');
     if (!response.ok) {
       throw new Error('City not found');
     }
